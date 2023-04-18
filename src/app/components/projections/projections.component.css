@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+h1 {
+    color: #e823fa;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.movie-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.movie-box {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+}
+
+.movie-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0066cc;
+}
+
+.movie-director {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.movie-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.movie-rating {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e823fa;
+}
+
+.movie-year {
+    font-size: 14px;
+    font-weight: bold;
+    color: #999;
+}
+
+a:link {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #0066cc;
+    text-decoration: none;
+
+}
+
+a:hover {
+    color: #0066cc;
+    text-decoration: none;
+
+}
+
+a:active {
+    text-decoration: none;
+    color: #0066cc;
+}

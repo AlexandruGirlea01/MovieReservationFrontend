@@ -1,0 +1,40 @@
+<router-outlet></router-outlet>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.component.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form class="login-form" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
+      <h1>Login</h1>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Email"  id="email" formControlName="email">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="password" id="password" name="password" placeholder="Enter password"
+            formControlName="password">
+        </mat-form-field>
+
+      </div>
+      <div class="login-button">
+        <button mat-raised-button type="submit" class="login" [disabled]="formGroup.invalid"> Login </button>
+      </div>
+      <div class="register">
+        <a routerLink="/register">Need an account? Sign up</a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

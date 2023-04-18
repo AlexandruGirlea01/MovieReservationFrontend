@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projection Name</title>
+  <link rel="stylesheet" href="room.component.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+  </style>
+
+</head>
+
+<body>
+  
+  <h1>{{currentProjection.name}}</h1>
+
+  <div class="grid">
+    <button *ngFor="let num of numbers; let i = index" class="button" (click)="toggleButton(i)" [style.backgroundColor]="buttonColors[i]">{{ num }}</button>
+  </div>
+
+  <div id="action-button-container">
+    <button class="action"> Reserve seats </button>
+    <button class="action"> Delete reservation </button>
+  </div>
+
+</body>

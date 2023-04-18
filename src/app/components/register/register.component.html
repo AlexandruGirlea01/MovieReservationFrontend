@@ -1,0 +1,48 @@
+<router-outlet></router-outlet>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <link rel="stylesheet" href="register.component.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form class="register-form" [formGroup]="formGroup" (ngSubmit)="registerProcess()">
+      <h1>Register</h1>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="text" placeholder="First Name" id="firstName" formControlName="firstName">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Last Name" id="lastName" formControlName="lastName">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Email" id="email" formControlName="email">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" id="password" formControlName="password">
+        </mat-form-field>
+      </div>
+      <div class="register-button">
+        <button mat-raised-button type="submit" class="register" [disabled]="formGroup.invalid"> Register </button>
+      </div>
+      <div class="redirectlogin">
+        <a routerLink="/login">Already have an account? Log In</a>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

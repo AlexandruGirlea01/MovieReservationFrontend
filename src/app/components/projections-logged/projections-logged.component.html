@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies Page</title>
+    <link rel="stylesheet" href="projections-logged.component.css">
+</head>
+<body>
+    <h1> Hello, {{currentUser.firstName}}</h1>
+    <div class=movie-container>
+        <div *ngFor="let projection of projections">
+            <div class="movie-box">
+                <div class=movie-title> <a [routerLink]="[]" (click)="redirect(projection.projectionId, currentUser.userId)">  {{projection.name}} </a> </div>
+                <div class=movie-description>{{projection.description}}</div>
+                <div class=movie-rating>{{projection.rating}}</div>
+                <div class=movie-year>{{projection.genre}}</div>
+            </div>
+        </div>
+    </div>
+</body>

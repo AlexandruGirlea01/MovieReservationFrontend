@@ -1,0 +1,49 @@
+body {
+  font-family: 'Mukta', sans-serif;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+#action-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(200px);
+}
+
+
+.button{
+  background-color: lightgreen;
+  border: thin;
+  width: 80%;
+  height: 120%;
+}
+
+button.action {
+  background-color: #e823fa;
+  margin: 10px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 1cm;
+  color: white;
+  font-weight: bold;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e823fa;
+  transform: translateY(8px);
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 10px;
+  padding: 10px;
+  transform: translateY(30%);
+}
