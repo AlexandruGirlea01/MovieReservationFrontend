@@ -1,13 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f1f1f1;
 }
 
 h1 {
-    color: #e823fa;
-    justify-content: center;
-    align-items: center;
+    color: #af2cf5;
+    font-family: 'Cabin', sans-serif;
+}
+
+.header {
     display: flex;
+    align-items: center;  
+    justify-content: center;  
 }
 
 .movie-container {
@@ -21,11 +24,13 @@ h1 {
 }
 
 .movie-box {
+    position: relative;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
     padding: 20px;
+    height: 200px;
     width: 300px;
 }
 
@@ -34,26 +39,26 @@ h1 {
     font-weight: bold;
     margin-bottom: 10px;
     color: #0066cc;
-}
-
-.movie-director {
-    font-size: 16px;
-    margin-bottom: 10px;
+    
 }
 
 .movie-description {
     font-size: 14px;
     line-height: 1.5;
-    margin-bottom: 10px;
+
 }
 
 .movie-rating {
+    position: absolute;
+    bottom: 10%;
     font-size: 18px;
     font-weight: bold;
     color: #e823fa;
 }
 
 .movie-year {
+    position: absolute;
+    bottom: 3%;
     font-size: 14px;
     font-weight: bold;
     color: #999;
@@ -79,4 +84,24 @@ a:hover {
 a:active {
     text-decoration: none;
     color: #0066cc;
+}
+
+.dropdown-container{
+    text-decoration: underline; 
+    cursor: pointer;
+    position: absolute;
+    right: 3%;
+}
+
+.dropdown-container .dropdown-button{
+    background: transparent; 
+    border: none;
+    font-family: 'Cabin', sans-serif;
+    font-size: large;
+
+}
+
+.imdb{
+    height: 40px; width: 40px;
+    transform: translateY(13px) translateX(5px);
 }

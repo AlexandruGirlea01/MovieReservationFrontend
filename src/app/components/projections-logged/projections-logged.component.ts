@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Projection } from 'src/app/models/projection';
@@ -13,28 +13,35 @@ import { ProjectionService } from 'src/app/services/projection.service';
 })
 export class ProjectionsLoggedComponent implements OnInit {
 
-  currentUser: User;
+  currentUser: User  = JSON.parse(localStorage.getItem("user") || '{}');
   projections: Projection[] = [];
   route: ActivatedRoute;
+  showDropdown = false;
 
-  constructor( private projectionService: ProjectionService, private authService: AuthService, private router: Router) { 
-
+  constructor( private projectionService: ProjectionService, private authService: AuthService,
+     private router: Router,
+     private elementRef: ElementRef) { 
+       
   }
 
   ngOnInit(): void {
+
     this.projectionService.getProjections().subscribe(response => {
       this.projections = response;
     });
-
-    this.authService.findById(localStorage.getItem("userId")).subscribe((response: User) =>{
-      console.log(response.userId);
-      this.currentUser = new User(response.userId, response.firstName, response.lastName, response.email, response.password, response.isAdmin);
-    })
   }
 
   redirect(projectionId: number, userId: number){
-    localStorage.setItem("userId", userId.toString());
-    localStorage.setItem("projectionId", projectionId.toString());
-    this.router.navigateByUrl(`/projections/${userId}/room/${projectionId}`);
+    this.projectionService.findById(projectionId.toString()).subscribe(result => {
+      localStorage.setItem("projection", JSON.stringify(result));
+      this.router.navigateByUrl(`/projections/${userId}/room/${projectionId}`);
+    })
   }
+
+  logout(){
+    localStorage.removeItem("user");
+    localStorage.removeItem("projection");
+    this.router.navigateByUrl("/home")
+  }
+  
 }

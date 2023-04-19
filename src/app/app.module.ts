@@ -12,7 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectionsLoggedComponent } from './components/projections-logged/projections-logged.component';
 import { RoomComponent } from './components/room/room.component';
-
+import { HomeComponent } from './components/home/home.component';
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,8 @@ import { RoomComponent } from './components/room/room.component';
     RegisterComponent,
     LoginComponent,
     ProjectionsLoggedComponent,
-    RoomComponent
-    
+    RoomComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { RoomComponent } from './components/room/room.component';
     MatCardModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ],
   
   providers: [],

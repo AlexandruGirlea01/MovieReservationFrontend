@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register Page</title>
   <link rel="stylesheet" href="register.component.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +36,7 @@
         </mat-form-field>
       </div>
       <div class="register-button">
-        <button mat-raised-button type="submit" class="register" [disabled]="formGroup.invalid"> Register </button>
+        <button mat-raised-button type="submit" class="register fade" [disabled]="formGroup.invalid"> Register </button>
       </div>
       <div class="redirectlogin">
         <a routerLink="/login">Already have an account? Log In</a>

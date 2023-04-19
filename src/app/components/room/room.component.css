@@ -2,6 +2,7 @@ body {
   font-family: 'Mukta', sans-serif;
   font-weight: bold;
   margin: 0;
+  background-color: #333333;
 }
 
 
@@ -13,12 +14,6 @@ body {
 }
 
 
-.button{
-  background-color: lightgreen;
-  border: thin;
-  width: 80%;
-  height: 120%;
-}
 
 button.action {
   background-color: #e823fa;
@@ -30,6 +25,51 @@ button.action {
   font-weight: bold;
 }
 
+button.reserved{
+  background-color: red;
+  border: thin;
+  width: 80%;
+  height: 120%;
+}
+
+button.free{
+  background-color: #66f542;
+  border: thin;
+  width: 80%;
+  height: 120%;
+}
+
+button.selected{
+  background-color: #af2cf5;
+  border: thin;
+  width: 80%;
+  height: 120%;
+}
+
+button.deletable{
+  background-color: red;
+  border: thin;
+  width: 50px;
+  height: 30px;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+button.deletable-selected{
+  background-color: yellow;
+  border: thin;
+  width: 50px;
+  height: 30px;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   display: flex;
   justify-content: center;
@@ -37,6 +77,8 @@ h1 {
   color: #e823fa;
   transform: translateY(8px);
   font-weight: bold;
+  margin-top: 0;
+  padding-top: 1%;
 }
 
 .grid {
@@ -46,4 +88,86 @@ h1 {
   gap: 10px;
   padding: 10px;
   transform: translateY(30%);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+visibility: visible;
+  opacity: 1;
+}
+
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #af2cf5;
+  font-family: Tahoma, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+.popup .close {
+  position: absolute;
+  top: 11px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: red;
+  cursor: pointer;
+}
+.popup .content {
+  height: 70%;
+  overflow: auto;
+  color: #af2cf5;
+  padding-top: 20px; 
+}
+
+.popup span{
+  color: #0066cc;
+}
+
+.confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-button{
+  background-color: #66f542;
+  border: thin;
+  border-radius: 2em;
+  height: 25px;
+  width: 90px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 700px){
+  
+  .popup{
+    width: 70%;
+  }
 }

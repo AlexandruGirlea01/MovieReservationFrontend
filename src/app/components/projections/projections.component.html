@@ -2,16 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Movies Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="projections.component.css">
 </head>
 <body>
-    <h1> Projections </h1>
+    <div class="header">
+         <h1> Projections </h1>    
+    </div>
+    
     <div class=movie-container>
         <div *ngFor="let projection of projections">
             <div class="movie-box">
-                <div class=movie-title><a routerLink="/projections/">{{projection.name}} </a> </div>
+                <div class="movie-title" (click)="redirectLogin()"> {{projection.name}} </div>
                 <div class=movie-description>{{projection.description}}</div>
-                <div class=movie-rating>{{projection.rating}}</div>
+                <div class=movie-rating>{{projection.rating}} <img src="./assets/imdb.png" class="imdb"> </div>
                 <div class=movie-year>{{projection.genre}}</div>
             </div>
         </div>

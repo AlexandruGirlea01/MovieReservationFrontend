@@ -1,0 +1,36 @@
+body{
+    background-image: url("src\assets\background.jpg");
+    background-size: 100%;
+}
+
+h1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    padding-top: 13%;
+    color: white;
+    font-size: 70px;
+    font-family: 'Cabin', sans-serif;
+}
+
+.buttons{
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    padding: 10px;
+    margin: 20px;
+    width: 110px;
+    height: 60px;
+    background-color: #ffff;
+    border: thin;
+    border-radius: 10%;
+    font-size: 16px;
+    color: #af2cf5;
+    font-weight: bold;
+    font-family: 'Cabin', sans-serif;
+}

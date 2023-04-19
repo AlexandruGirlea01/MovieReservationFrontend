@@ -34,11 +34,15 @@ export class LoginComponent implements OnInit {
 
   loginProcess(){
     this.authService.loginUser([this.formGroup.value.email, this.formGroup.value.password]).subscribe(result =>{
-      if(result === "Wrong password!") alert("Wrong password!");
-      else if(result === "There is no user with that email!") alert("There is no user with that email!");
-      this.loginUser = result;
-      localStorage.setItem("userId", this.loginUser.userId);
-      this.router.navigateByUrl(`/projections/${this.loginUser.userId}`);
+      if(result == "Wrong password!") alert("Wrong password!");
+      else if(result == "There is no user with that email!") alert("There is no user with that email!");
+      else{
+        this.loginUser = result;
+        localStorage.setItem("user", JSON.stringify(this.loginUser));
+        this.router.navigateByUrl(`/projections/${this.loginUser.userId}`);
+      }
+    }, err => {
+      alert(err.error);
     })
   }
 

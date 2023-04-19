@@ -17,13 +17,19 @@ export class ProjectionsComponent implements OnInit {
   projections: Projection[] = [];
   currentUser: User;
 
-  constructor( private projectionService: ProjectionService, router: Router) { 
+  constructor( private projectionService: ProjectionService, private router: Router) { 
+    
   }
 
   ngOnInit(): void {
     this.projectionService.getProjections().subscribe(response => {
       this.projections = response;
     });
+  }
+
+  redirectLogin(){
+    alert("You need to login first!")
+    this.router.navigateByUrl('/login');
   }
   
 }

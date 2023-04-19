@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { environment } from 'src/environments/environment';
@@ -29,7 +29,7 @@ export class AuthService {
     });
   }
 
-  findById(userId: string | null){
-    return this.http.get<User>(`${environment.apiUrl}/User/${userId}`);
+  async findById(userId: string | null){
+    return await this.http.get<User>(`${environment.apiUrl}/User/${userId}`).toPromise();
   }
 }

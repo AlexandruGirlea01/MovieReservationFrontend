@@ -4,11 +4,18 @@ body {
 }
 
 h1 {
-    color: #e823fa;
+    color: #af2cf5;
+    text-align: center;
     justify-content: center;
-    align-items: center;
-    display: flex;
+    font-family: 'Cabin', sans-serif;
 }
+
+.header {
+    display: flex;
+    align-items: top;
+    justify-content: center;    
+}
+
 
 .movie-container {
     display: flex;
@@ -18,14 +25,17 @@ h1 {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    font-family: 'Cabin', sans-serif;
 }
 
 .movie-box {
+    position: relative;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     margin: 10px;
     padding: 20px;
+    height: 200px;
     width: 300px;
 }
 
@@ -33,27 +43,33 @@ h1 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #0066cc;
+    color: #0066cc;   
+    cursor: pointer;
 }
 
-.movie-director {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
 
 .movie-description {
     font-size: 14px;
     line-height: 1.5;
-    margin-bottom: 10px;
+
 }
 
 .movie-rating {
+    position: absolute;
+    bottom: 10%;
     font-size: 18px;
     font-weight: bold;
     color: #e823fa;
 }
 
+.imdb{
+    height: 40px; width: 40px;
+    transform: translateY(13px) translateX(5px);
+}
+
 .movie-year {
+    position: absolute;
+    bottom: 3%;
     font-size: 14px;
     font-weight: bold;
     color: #999;
