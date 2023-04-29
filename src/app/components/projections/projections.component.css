@@ -1,10 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
+    background-image: url("src\assets\bg2.jpg");
+    background-size: 100%;
 }
 
 h1 {
-    color: #af2cf5;
+    color: white;
     text-align: center;
     justify-content: center;
     font-family: 'Cabin', sans-serif;

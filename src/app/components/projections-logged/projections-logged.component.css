@@ -1,9 +1,10 @@
 body {
-    background-color: #f1f1f1;
+    background-image: url("src\assets\bg2.jpg");
+    background-size: 100%;
 }
 
 h1 {
-    color: #af2cf5;
+    color: white;
     font-family: 'Cabin', sans-serif;
 }
 
@@ -35,7 +36,7 @@ h1 {
 }
 
 .movie-title {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #0066cc;
@@ -98,6 +99,7 @@ a:active {
     border: none;
     font-family: 'Cabin', sans-serif;
     font-size: large;
+    color: white;
 
 }
 

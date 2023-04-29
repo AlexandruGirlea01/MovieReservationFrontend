@@ -14,6 +14,7 @@ import { ProjectionsLoggedComponent } from './components/projections-logged/proj
 import { RoomComponent } from './components/room/room.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
+import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatMenu, MatMenuModule } from '@angular/material/menu';
     ProjectionsLoggedComponent,
     RoomComponent,
     HomeComponent,
+    AccountComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ProjectionsLoggedComponent } from './components/projections-logged/projections-logged.component';
 import { RoomComponent } from './components/room/room.component';
 import { HomeComponent } from './components/home/home.component';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +15,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'projections', component: ProjectionsComponent},
   { path : 'projections/:id', component: ProjectionsLoggedComponent},
-  { path: 'projections/:userId/room/:projectionId', component: RoomComponent}
+  { path: 'projections/:userId/room/:projectionId', component: RoomComponent},
+  { path: 'account', component: AccountComponent}
+
 ];
 
 @NgModule({

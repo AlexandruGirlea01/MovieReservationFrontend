@@ -1,0 +1,40 @@
+<router-outlet></router-outlet>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <link rel="stylesheet" href="account.component.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <form class="register-form" [formGroup]="formGroup" (ngSubmit)="modifyUser()">
+      <h1>User details</h1>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="text" id="firstName" formControlName="firstName" [defaultValue]="currentUser.firstName">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="text"  id="lastName" formControlName="lastName" [defaultValue]="currentUser.lastName">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput type="text" id="email" formControlName="email" [defaultValue]="currentUser.email">
+        </mat-form-field>
+      </div>
+      <div class="register-button">
+        <button mat-raised-button type="submit" class="register fade" [disabled]="formGroup.invalid"> Modify </button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

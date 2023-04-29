@@ -2,7 +2,7 @@ body {
   font-family: 'Mukta', sans-serif;
   font-weight: bold;
   margin: 0;
-  background-color: #333333;
+  background-color: #333333e4;
 }
 
 
@@ -23,6 +23,7 @@ button.action {
   border-radius: 1cm;
   color: white;
   font-weight: bold;
+  font-family: 'Cabin', sans-serif;
 }
 
 button.reserved{
@@ -30,6 +31,8 @@ button.reserved{
   border: thin;
   width: 80%;
   height: 120%;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
 }
 
 button.free{
@@ -37,6 +40,8 @@ button.free{
   border: thin;
   width: 80%;
   height: 120%;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
 }
 
 button.selected{
@@ -44,6 +49,8 @@ button.selected{
   border: thin;
   width: 80%;
   height: 120%;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
 }
 
 button.deletable{
@@ -56,6 +63,8 @@ button.deletable{
   font-weight: bold;
   justify-content: center;
   align-items: center;
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
 }
 
 button.deletable-selected{

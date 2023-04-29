@@ -11,9 +11,9 @@
     <div class="header">
         <h1> Our program </h1>
         <div class="dropdown-container">
-            <button mat-button class="dropdown-button" [matMenuTriggerFor]="menu"> <u> Account settings </u>  </button>
+            <button mat-button class="dropdown-button" [matMenuTriggerFor]="menu"> <u> Account</u>  </button>
             <mat-menu #menu="matMenu">
-                <button mat-menu-item>Account details</button>
+                <button mat-menu-item routerLink="/account">Account details</button>
                 <button mat-menu-item style="color: red" (click)="logout()"> Log out</button>
             </mat-menu>
         </div>
@@ -22,6 +22,7 @@
         <div *ngFor="let projection of projections">
             <div class="movie-box">
                 <div class=movie-title> <a [routerLink]="[]" (click)="redirect(projection.projectionId, currentUser.userId)">  {{projection.name}} </a> </div>
+                <div> <hr> </div>
                 <div class=movie-description>{{projection.description}}</div>
                 <div class=movie-rating>{{projection.rating}} <img src="./assets/imdb.png" class="imdb"> </div>
                 <div class=movie-year>{{projection.genre}}</div>

@@ -29,7 +29,15 @@ export class AuthService {
     });
   }
 
-  async findById(userId: string | null){
-    return await this.http.get<User>(`${environment.apiUrl}/User/${userId}`).toPromise();
+  modifyUser(userInfo: Array<String>){
+    return this.http.put(`${environment.apiUrl}/User`, {
+      "UserId": userInfo[0],
+      "FirstName": userInfo[1],
+      "LastName": userInfo[2],
+      "Email": userInfo[3],
+      "Password": userInfo[4],
+      "IsAdmin": userInfo[5]
+    });
   }
+
 }
