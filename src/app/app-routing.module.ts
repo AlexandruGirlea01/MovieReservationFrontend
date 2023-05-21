@@ -7,6 +7,8 @@ import { ProjectionsLoggedComponent } from './components/projections-logged/proj
 import { RoomComponent } from './components/room/room.component';
 import { HomeComponent } from './components/home/home.component';
 import { AccountComponent } from './components/account/account.component';
+import { PanelComponent } from './components/panel/panel.component';
+import { ProjectionComponent } from './components/projection/projection.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'projections', component: ProjectionsComponent},
   { path : 'projections/:id', component: ProjectionsLoggedComponent},
   { path: 'projections/:userId/room/:projectionId', component: RoomComponent},
-  { path: 'account', component: AccountComponent}
+  { path: 'account', component: AccountComponent},
+  { path: 'panel', component: PanelComponent},
+  { path: 'projection/:id', component: ProjectionComponent}
 
 ];
 

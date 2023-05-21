@@ -15,6 +15,8 @@ import { RoomComponent } from './components/room/room.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatMenu, MatMenuModule } from '@angular/material/menu';
 import { AccountComponent } from './components/account/account.component';
+import { PanelComponent } from './components/panel/panel.component';
+import { ProjectionComponent } from './components/projection/projection.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { AccountComponent } from './components/account/account.component';
     RoomComponent,
     HomeComponent,
     AccountComponent,
+    PanelComponent,
+    ProjectionComponent,
   ],
   imports: [
     BrowserModule,

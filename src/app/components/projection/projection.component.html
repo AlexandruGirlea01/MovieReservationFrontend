@@ -1,0 +1,47 @@
+<router-outlet></router-outlet>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <link rel="stylesheet" href="projection.component.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <form class="register-form" [formGroup]="formGroup" (ngSubmit)="modifyProjection()">
+      <h1>Projection details</h1>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput placeholder="Title" type="text" id="name" formControlName="name" [defaultValue]="projection.name">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput placeholder="Genre" type="text"  id="genre" formControlName="genre" [defaultValue]="projection.genre">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <input matInput placeholder="Rating" type="text" id="rating" formControlName="rating" [defaultValue]="projection.rating">
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <mat-form-field>
+          <textarea cdkTextareaAutosize matInput placeholder="Description" type="text" id="description" formControlName="description" [defaultValue]="projection.description"> </textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="action-button">
+        <button mat-raised-button type="submit" class="modify fade" [disabled]="formGroup.invalid"> Modify </button>
+        <button mat-raised-button class="delete" (click)="deleteProjection()"> Delete </button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

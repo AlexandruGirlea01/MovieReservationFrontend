@@ -14,6 +14,7 @@
             <button mat-button class="dropdown-button" [matMenuTriggerFor]="menu"> <u> Account</u>  </button>
             <mat-menu #menu="matMenu">
                 <button mat-menu-item routerLink="/account">Account details</button>
+                <button *ngIf="currentUser.isAdmin" mat-menu-item routerLink="/panel" > Manage projections  </button>
                 <button mat-menu-item style="color: red" (click)="logout()"> Log out</button>
             </mat-menu>
         </div>

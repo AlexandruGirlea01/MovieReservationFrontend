@@ -1,5 +1,4 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Projection } from 'src/app/models/projection';
 import { User } from 'src/app/models/user';
@@ -25,7 +24,6 @@ export class ProjectionsLoggedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.projectionService.getProjections().subscribe(response => {
       this.projections = response;
     });

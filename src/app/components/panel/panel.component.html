@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="panel.component.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+  
+  </head>
+  
+
+<body>
+  <div class="header">
+    <span class="material-icons" (click)="navigateBack()" >arrow_back</span>
+    <h1>Admin Panel</h1>
+
+  </div>
+    
+    
+  
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Rating</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+
+        <tbody *ngFor="let projection of projections">
+            <tr>
+                <td> {{projection.projectionId}} </td>
+                <td> <a [routerLink]="[]" (click)="redirect(projection.projectionId, currentUser.userId)"> {{projection.name}} </a> </td>
+                <td> {{projection.rating}}</td>
+                <td> {{projection.genre}} </td>
+            </tr>
+        </tbody>
+    </table>
+
+<div id="action-button-container">
+    <button class="action fade" (click)="toggleOverlay()"> Add projection </button>
+</div>
+
+<div class="overlay" *ngIf="popup">
+    <div class="popup">
+      <h2>Add a projection</h2>
+      <a class="close" (click)="popup=false">&times;</a>
+      <div class="content">
+            <form class="register-form" [formGroup]="formGroup" (ngSubmit)="addProjection()">
+              <div class="form-control">
+                <mat-form-field>
+                  <input matInput placeholder="Title" type="text" id="name" formControlName="name" >
+                </mat-form-field>
+              </div>
+              <div class="form-control">
+                <mat-form-field>
+                  <input matInput placeholder="Genre" type="text"  id="genre" formControlName="genre">
+                </mat-form-field>
+              </div>
+              <div class="form-control">
+                <mat-form-field>
+                  <input matInput placeholder="Rating" type="text" id="rating" formControlName="rating">
+                </mat-form-field>
+              </div>
+              <div class="form-control">
+                <mat-form-field>
+                  <textarea cdkTextareaAutosize matInput placeholder="Description" type="text" id="description" formControlName="description"> </textarea>
+                </mat-form-field>
+              </div>
+              <div class="action-button">
+                <button mat-raised-button type="submit" class="add fade" [disabled]="formGroup.invalid"> Add projection </button>
+            </div>
+              </form>
+            </div>
+            
+      </div>
+    </div>
+
+
+</body>
+
+</html>

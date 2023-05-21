@@ -61,7 +61,7 @@ export class RoomComponent implements OnInit {
     }
   }
 
-  toggleOverlay(){
+  toggleAddOverlay(){
     if(this.selected.length !== 0) this.popup = true;
     else{
       alert("To make a reservation, you must first select at least one seat!")
@@ -87,10 +87,10 @@ export class RoomComponent implements OnInit {
         this.currentProjection.projectionId
       ]).subscribe(res => {
         this.popup = false;
+        window.location.reload();
       })
-
     }
-    window.location.reload();
+    
   }
 
   initDeletable(){
@@ -110,13 +110,11 @@ export class RoomComponent implements OnInit {
       button?.classList.remove("deletable");
       button?.classList.add("deletable-selected");
       this.toDelete.push(index);
-      console.log(this.toDelete)
     }
     else if(currentClass === "deletable-selected"){
       button?.classList.remove("deletable-selected");
       button?.classList.add("deletable");
       this.toDelete.splice(this.selected.indexOf(index), 1);
-      console.log(this.toDelete)
     }
   }
 
@@ -133,11 +131,12 @@ export class RoomComponent implements OnInit {
           && reservation.seatNumber == this.toDelete[i]){
             this.reservationService.deleteReservation(reservation.reservationId).subscribe(result => {
                 console.log(result);
+                this.deletePopup = false;
+                window.location.reload();
             })     
           }
       }
     }
-    this.deletePopup = false;
-    window.location.reload();
+    
   }
 }
